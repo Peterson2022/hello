@@ -1,0 +1,1 @@
+https://pub-api-1.bianyuan.xyz/sub?target=clash&url=https%3A%2F%2Fraw.githubusercontent.com%2FPeterson2022%2Fhello%2Fmain%2F1643787832124.yml&insert=false
