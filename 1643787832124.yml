@@ -1,0 +1,46 @@
+#Yunya2022
+
+port: 7890
+socks-port: 7891
+redir-port: 7892
+allow-lan: false
+mode: rule
+log-level: silent
+external-controller: 0.0.0.0:9090
+secret: ""
+dns:
+  enable: true
+  ipv6: false
+  listen: 0.0.0.0:53
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  nameserver:
+    - 119.29.29.29
+    - 1.1.1.1
+  fallback:
+    - 1.0.0.1
+    - 8.8.8.8
+  fallback-filter:
+    geoip: true
+    ipcidr:
+      - 240.0.0.0/4
+proxies:
+  - name: 🇭🇰 香港 01 [ B1 ]
+    type: socks5
+    server: 43.128.49.23
+    port: 1080
+    username: yunyaconnect6976
+    password: 47247397
+    #tls: true
+    #kip-cert-verify: true
+    #udp: true
+proxy-groups:
+  - name: 🏄 上网冲浪
+    type: select
+    proxies:
+      - 🇭🇰 香港 01 [ B1 ]
+    url: http://cp.cloudflare.com/generate_204
+    interval: 300
+rules:
+  - GEOIP,CN,DIRECT
+  - MATCH, 🏄 上网冲浪
